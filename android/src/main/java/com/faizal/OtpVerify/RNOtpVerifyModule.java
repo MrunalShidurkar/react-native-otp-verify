@@ -78,7 +78,7 @@ public class RNOtpVerifyModule extends ReactContextBaseJavaModule implements Lif
 
     private void requestOtp(final Promise promise) {
         SmsRetrieverClient client = SmsRetriever.getClient(reactContext);
-        Task<Void> task = client.startSmsRetriever();
+        Task<Void> task = client.startSmsUserConsent(null);
         task.addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
